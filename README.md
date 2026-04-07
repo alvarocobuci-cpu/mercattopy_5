@@ -28,4 +28,3 @@ O acesso às funcionalidades é controlado por autenticação e permissões, gar
 
 ---
 
-Projeto desenvolvido para fins acadêmicos.
