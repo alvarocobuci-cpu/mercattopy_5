@@ -1,0 +1,35 @@
+{% if messages %}
+    {% for message in messages %}
+        <div>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% if user.is_authenticated %}
+
+    <a href="/">Dashboard</a>
+
+    {% if user.groups.all.0.name == 'Admin' %}
+        <a href="/produtos/">Produtos</a>
+    {% endif %}
+
+    <a href="/vendas/">Vendas</a>
+
+    <a href="/accounts/logout/">Sair</a>
+
+{% endif %}
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Login</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Entrar</button>
+</form>
+
+{% endblock %}
